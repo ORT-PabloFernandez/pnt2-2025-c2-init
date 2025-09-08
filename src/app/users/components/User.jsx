@@ -11,6 +11,7 @@ export default function User({ user }) {
 
     return (
         <li key={user.id} className="user-item">
+
             <div className="user-content">
                 <div className="user-info">
                     <Link href={`/users/${user.id}`}>
@@ -38,6 +39,7 @@ export default function User({ user }) {
                     </span>
                 </div>
             </div>
+
         </li>
     )
 }

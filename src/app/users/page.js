@@ -4,7 +4,9 @@ import UsersList from "./components/UserList";
 import { useState, useEffect } from 'react';
 //import { users } from "../data/mocs";
 
+
 export default function UsersPage() {
+
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -21,10 +23,12 @@ export default function UsersPage() {
                 console.error('Error al cargar usuarios', error);
                 setLoading(false);
             }
+
         };
         setTimeout(() => {
             fetchUsers();
         }, 2000);
+
     }, []);
 
     return (

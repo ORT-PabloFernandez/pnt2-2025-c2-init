@@ -1,6 +1,9 @@
 'use client';
 import { useState } from "react";
 import "./beers.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons'
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'
 
 export default function Beer({ beer }) {
     const [quantity, setQuantity] = useState(0);
@@ -19,6 +22,10 @@ export default function Beer({ beer }) {
     // implementarlo con un solo handler
     // validar que no pueda comprar 0 unidades.
     // mejorar la leyenda de Has comprado.... con una unidad
+
+    // TODO implementar el me gusta (heart)
+    // cambiar el color del heart si esta likeado
+    // mostrar la cantidad de likes
 
     const handleBuy = () => {
         setMessage(`Has comprado ${quantity} unidades de ${beer.name}`);
@@ -49,6 +56,8 @@ export default function Beer({ beer }) {
                     <span className="quantity-display">{quantity}</span>
                     <button onClick={() => handlerPlus("plus")} className="quantity-button quantity-button-right">+</button>
                 </div>
+                <FontAwesomeIcon icon={solidHeart} />
+                <FontAwesomeIcon icon={regularHeart} />
 
                 {/* botón de compra */}
                 <button onClick={handleBuy} className="buy-button">Comprar</button>
