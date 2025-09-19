@@ -8,3 +8,5 @@ export default function BeersPage(){
         <BeerList beers={beers} />
     )
 }
+
+// chequeo de pull requests
